@@ -13,3 +13,7 @@
 4. backend
 
 - npm i express
+
+5. frontend
+
+- npm i axios
