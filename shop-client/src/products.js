@@ -8,7 +8,7 @@ const products = [
     brand: "X&Y",
     category: "Dress",
     price: 400,
-    countInStock: 2,
+    countInStock: 0,
     rating: 4.5,
     numReviews: 10,
   },
