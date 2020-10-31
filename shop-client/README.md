@@ -18,4 +18,6 @@
 
 - npm i axios
 
-6. npm i -D nodemon concurrently
+6. MongoDB, atlas, mongoose
+
+- npm i mongoose
