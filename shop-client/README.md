@@ -18,6 +18,10 @@
 
 - npm i axios
 
-6. MongoDB, atlas, mongoose
+6. backend - MongoDB, atlas, mongoose
 
 - npm i mongoose
+
+7.  backend
+
+- npm i bcryptjs
