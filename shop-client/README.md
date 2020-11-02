@@ -25,3 +25,8 @@
 7.  backend
 
 - npm i bcryptjs
+
+8. scripts
+
+- npm run data:import
+- npm run data:destroy
