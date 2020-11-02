@@ -30,3 +30,8 @@
 
 - npm run data:import
 - npm run data:destroy
+
+9. backend
+
+- npm i express-async-handler
+- Simple middleware for handling exceptions inside of async express routes and passing them to your express error handlers.
