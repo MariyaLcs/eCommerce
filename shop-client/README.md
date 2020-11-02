@@ -35,3 +35,7 @@
 
 - npm i express-async-handler
 - Simple middleware for handling exceptions inside of async express routes and passing them to your express error handlers.
+
+10. frontend
+
+- npm i redux react-redux redux-thunk redux-devtools-extension
