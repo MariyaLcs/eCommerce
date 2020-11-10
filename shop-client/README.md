@@ -39,3 +39,10 @@
 10. frontend
 
 - npm i redux react-redux redux-thunk redux-devtools-extension
+
+11. backend
+
+- JWT
+  JSON Web Tokens are an open, industry standard RFC 7519 method for representing claims securely between two parties. JWT.IO allows you to decode, verify and generate JWT.
+
+- npm i jsonwebtoken
