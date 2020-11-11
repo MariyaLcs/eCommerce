@@ -8,3 +8,6 @@ GET/api/products/:id
 
 POST/api/usrs/login
 {{URL}}/api/users/login
+
+GET/api/users/profile
+{{URL}}/api/users/profile
