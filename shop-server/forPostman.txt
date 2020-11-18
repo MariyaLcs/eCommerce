@@ -11,3 +11,6 @@ POST/api/usrs/login
 
 GET/api/users/profile
 {{URL}}/api/users/profile
+
+PUT /api/users/profile
+{{URL}}/api/users/profile
