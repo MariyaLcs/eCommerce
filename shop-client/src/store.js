@@ -5,7 +5,7 @@ import {
   productListReducer,
   productDetailsReducer,
 } from "./reducers/productReducers";
-import { cartReducer } from "./reducers/cartReduser";
+import { cartReducer } from "./reducers/cartReducer";
 import {
   userLoginReducer,
   userRegisterReducer,
