@@ -1,10 +1,14 @@
 Environment Name  URL  http://localhost:5000
 
+folder Products
+
 GET/api/products
 {{URL}}/api/products/
 
 GET/api/products/:id
 {{URL}}/api/products/5f9fe75e11aafa494c9f69ef
+
+folder Users & Auth
 
 POST/api/usrs/login
 {{URL}}/api/users/login
@@ -14,3 +18,8 @@ GET/api/users/profile
 
 PUT /api/users/profile
 {{URL}}/api/users/profile
+
+folder Orders
+
+GET /api/orders/:id
+{{URL}}/api/orders/5fa1a75b9cb12337c41d1d41
