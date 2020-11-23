@@ -26,12 +26,12 @@ const PlaceOrderScreen = ({history}) => {
     Number(cart.taxPrice)
   ).toFixed(2);
 
-  const orderCreate = useSelector((state) => state.orderCreate);
-  const { order, success, error } = orderCreate;
+  const orderCreate = useSelector((state) => state.orderCreate)
+  const { order, success, error } = orderCreate
 
   useEffect(()=>{
-    if(success){
-      history.pushState(`/order/${order._id}`)
+    if (success) {
+      history.push(`/order/${order._id}`)
     }
     // eslint-disable-next-line
   },[history, success])
@@ -47,8 +47,8 @@ const PlaceOrderScreen = ({history}) => {
         taxPrice: cart.taxPrice,
         totalPrice: cart.totalPrice,
       })
-    );
-  };
+    )
+  }
 
   return (
     <>
@@ -131,7 +131,7 @@ const PlaceOrderScreen = ({history}) => {
                   <Col>£{cart.totalPrice}</Col>
                 </Row>
               </ListGroup.Item>
-                  <ListGroup.Item>{error && <Message variant="danger">{error}</Message>}</ListGroup.Item>
+              <ListGroup.Item>{error && <Message variant="danger">{error}</Message>}</ListGroup.Item>
               <ListGroup.Item>
                 <Button
                   type="button"
