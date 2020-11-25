@@ -50,3 +50,4 @@
 12. developer.paypal.com
 
 - sandbox
+- paypal sdk script
