@@ -23,3 +23,6 @@ folder Orders
 
 GET /api/orders/:id
 {{URL}}/api/orders/5fa1a75b9cb12337c41d1d41
+
+GET /api/orders/myorders
+{{URL}}/api/orders/myorders
