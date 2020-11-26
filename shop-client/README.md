@@ -51,3 +51,5 @@
 
 - sandbox
 - paypal sdk script
+- npm i react-paypal-button-v2
+  An easy and simple to use React button component to implement PayPal's Checkout with Smart Payment Buttons V2 (Version 2).
