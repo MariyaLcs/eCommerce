@@ -19,6 +19,9 @@ GET/api/users/profile
 PUT /api/users/profile
 {{URL}}/api/users/profile
 
+GET /api/users    * Get all users. Admin Only
+{{URL}}/api/users
+
 folder Orders
 
 GET /api/orders/:id
@@ -26,3 +29,4 @@ GET /api/orders/:id
 
 GET /api/orders/myorders
 {{URL}}/api/orders/myorders
+
