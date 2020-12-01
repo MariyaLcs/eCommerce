@@ -34,7 +34,7 @@ const UserListScreen = () => {
               <th>NAME</th>
               <th>EMAIL</th>
               <th>ADMIN</th>
-              <th>XXX</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -42,9 +42,8 @@ const UserListScreen = () => {
               <tr key={user._id}>
                 <td>{user._id}</td>
                 <td>{user.name}</td>
-                <td>{user.email}</td>
                 <td>
-                  <a href={`mailto:${user.email}`}>{user._id}</a>{" "}
+                  <a href={`mailto:${user.email}`}>{user.email}</a>{" "}
                 </td>
                 <td>
                   {user.isAdmin ? (
