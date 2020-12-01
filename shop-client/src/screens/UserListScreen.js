@@ -12,7 +12,7 @@ const UserListScreen = () => {
   const { loading, error, users } = userList;
 
   useEffect(() => {
-    dispatch(listUsers);
+    dispatch(listUsers());
   }, [dispatch]);
 
   const deleteHandler = (id) => {
