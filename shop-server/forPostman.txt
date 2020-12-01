@@ -1,6 +1,6 @@
 Environment Name  URL  http://localhost:5000
 
-folder Products
+# folder Products
 
 GET/api/products
 {{URL}}/api/products/
@@ -8,7 +8,7 @@ GET/api/products
 GET/api/products/:id
 {{URL}}/api/products/5f9fe75e11aafa494c9f69ef
 
-folder Users & Auth
+# folder Users & Auth
 
 POST/api/usrs/login
 {{URL}}/api/users/login
@@ -22,7 +22,10 @@ PUT /api/users/profile
 GET /api/users    * Get all users. Admin Only
 {{URL}}/api/users
 
-folder Orders
+DELETE /api/users/:id
+{{URL}}/api/users/5fbbdcd077fda809b42854a7
+
+# folder Orders
 
 GET /api/orders/:id
 {{URL}}/api/orders/5fa1a75b9cb12337c41d1d41
