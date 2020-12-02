@@ -22,6 +22,12 @@ PUT /api/users/profile
 GET /api/users    * Get all users. Admin Only
 {{URL}}/api/users
 
+GET /api/users/:id * Get user by ID. Admin only
+{{URL}}/api/users/5fbjdcd077fda809b42854a7
+
+PUT /api/users/:id * Update a user by ID. Admin only
+
+
 DELETE /api/users/:id
 {{URL}}/api/users/5fbbdcd077fda809b42854a7
 
