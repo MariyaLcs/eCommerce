@@ -6,7 +6,11 @@ GET/api/products
 {{URL}}/api/products/
 
 GET/api/products/:id
-{{URL}}/api/products/5f9fe75e11aafa494c9f69ef
+{{URL}}/api/products/5f9fe75e11aafa494c969ef
+
+DELETE /api/products/:id  * Delete product.Admin only
+{{URL}}/api/products/5fa1a75b9cb12337c41dd49
+
 
 # folder Users & Auth
 
@@ -23,18 +27,18 @@ GET /api/users    * Get all users. Admin Only
 {{URL}}/api/users
 
 GET /api/users/:id * Get user by ID. Admin only
-{{URL}}/api/users/5fbjdcd077fda809b42854a7
+{{URL}}/api/users/5fbjdcd077fda09b42854a7
 
 PUT /api/users/:id * Update a user by ID. Admin only
-
+{{URL}}/api/users/5fa1a75b9cb12337c41dd41
 
 DELETE /api/users/:id
-{{URL}}/api/users/5fbbdcd077fda809b42854a7
+{{URL}}/api/users/5fbbdcd077fda809b4284a7
 
 # folder Orders
 
 GET /api/orders/:id
-{{URL}}/api/orders/5fa1a75b9cb12337c41d1d41
+{{URL}}/api/orders/5fa1a75b9cb1233741d1d41
 
 GET /api/orders/myorders
 {{URL}}/api/orders/myorders
