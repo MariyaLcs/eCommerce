@@ -11,6 +11,11 @@ GET/api/products/:id
 DELETE /api/products/:id  * Delete product.Admin only
 {{URL}}/api/products/5fa1a75b9cb12337c41dd49
 
+POST /api/products
+{{URL}}/api/products
+
+PUT /api/products/:id
+{{URL}}/api/products/5fce9453e51cdd31d0fc361
 
 # folder Users & Auth
 
