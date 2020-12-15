@@ -53,3 +53,9 @@
 - paypal sdk script
 - npm i react-paypal-button-v2
   An easy and simple to use React button component to implement PayPal's Checkout with Smart Payment Buttons V2 (Version 2).
+
+...
+
+13. multer
+
+- Multer is a node.js middleware for handling multipart/form-data, which is primarily used for uploading files. It is written on top of busboy for maximum efficiency.
