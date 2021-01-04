@@ -17,6 +17,9 @@ POST /api/products
 PUT /api/products/:id
 {{URL}}/api/products/5fce9453e51cdd31d0fc361
 
+POST /api/products/:id/reviews
+{{URL}}/api/products/5fcaa7733416d541d80a61d/reviews
+
 # folder Users & Auth
 
 POST/api/usrs/login
