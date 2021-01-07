@@ -14,14 +14,28 @@ import Rating from "../components/Rating";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
 
-import { listProductDetails } from "../actions/productActions";
+import { listProductDetails,  createProductReview } from "../actions/productActions";
+import {PRODUCT_CREATE_REVIEW_RESET} from "../constants/productConstants"
 
 const ProductScreen = ({ history, match }) => {
   const [qty, setQty] = useState(1);
+  const [rating, setRating] = useState(0);
+  const [comment, setComment] = useState("");
+
 
   const dispatch = useDispatch();
+
   const productDetails = useSelector((state) => state.productDetails);
   const { loading, product, error } = productDetails;
+
+  const productReviewCreate = useSelector((state) => state.productReviewCreate)
+  const {
+    success: successProductReview,
+    error: errorProductReview,
+  } = productReviewCreate
+
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
 
   useEffect(() => {
     dispatch(listProductDetails(match.params.id));
@@ -41,6 +55,7 @@ const ProductScreen = ({ history, match }) => {
       ) : error ? (
         <Message variant="danger">{error}</Message>
       ) : (
+        <>
         <Row>
           <Col md={3}>
             <Image src={product.image} alt={product.name} fluid />
@@ -115,6 +130,13 @@ const ProductScreen = ({ history, match }) => {
             </Card>
           </Col>
         </Row>
+        <Row>
+          <Col md={6}>
+            <h2>Reviews</h2>
+            {product.reviews.length === 0 && <Message>No Reviews</Message>}
+          </Col>
+        </Row>
+        </>
       )}
     </>
   );
