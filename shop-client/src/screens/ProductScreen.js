@@ -13,7 +13,6 @@ import {
 import Rating from "../components/Rating";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
-
 import {
   listProductDetails,
   createProductReview,
@@ -28,41 +27,46 @@ const ProductScreen = ({ history, match }) => {
   const dispatch = useDispatch();
 
   const productDetails = useSelector((state) => state.productDetails);
-  const { loading, product, error } = productDetails;
-
-  const productReviewCreate = useSelector((state) => state.productReviewCreate);
-  const {
-    success: successProductReview,
-    error: errorProductReview,
-  } = productReviewCreate;
+  const { loading, error, product } = productDetails;
 
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
 
+  const productReviewCreate = useSelector((state) => state.productReviewCreate);
+  const {
+    success: successProductReview,
+    loading: loadingProductReview,
+    error: errorProductReview,
+  } = productReviewCreate;
+
   useEffect(() => {
-    if(successProductReview){
-      alert("Review Sumbitted!")
-      setRating(0)
-      setComment("")
-      dispatch({type: PRODUCT_CREATE_REVIEW_RESET})
+    if (successProductReview) {
+      setRating(0);
+      setComment("");
     }
-    dispatch(listProductDetails(match.params.id));
+    if (!product._id || product._id !== match.params.id) {
+      dispatch(listProductDetails(match.params.id));
+      dispatch({ type: PRODUCT_CREATE_REVIEW_RESET });
+    }
   }, [dispatch, match, successProductReview]);
 
   const addToCartHandler = () => {
     history.push(`/cart/${match.params.id}?qty=${qty}`);
   };
 
-  const submitHandler=(e)=>{
-    e.preventDefault()
-    dispatch(createProductReview(match.params.id, {
-      rating, comment
-    }))
-  }
+  const submitHandler = (e) => {
+    e.preventDefault();
+    dispatch(
+      createProductReview(match.params.id, {
+        rating,
+        comment,
+      })
+    );
+  };
 
   return (
     <>
-      <Link className="btn btn-dark my-3" to="/">
+      <Link className="btn btn-light my-3" to="/">
         Go Back
       </Link>
       {loading ? (
@@ -72,10 +76,10 @@ const ProductScreen = ({ history, match }) => {
       ) : (
         <>
           <Row>
-            <Col md={3}>
+            <Col md={6}>
               <Image src={product.image} alt={product.name} fluid />
             </Col>
-            <Col md={6}>
+            <Col md={3}>
               <ListGroup variant="flush">
                 <ListGroup.Item>
                   <h3>{product.name}</h3>
@@ -86,7 +90,7 @@ const ProductScreen = ({ history, match }) => {
                     text={`${product.numReviews} reviews`}
                   />
                 </ListGroup.Item>
-                <ListGroup.Item>Price: £{product.price}</ListGroup.Item>
+                <ListGroup.Item>Price: ${product.price}</ListGroup.Item>
                 <ListGroup.Item>
                   Description: {product.description}
                 </ListGroup.Item>
@@ -97,12 +101,13 @@ const ProductScreen = ({ history, match }) => {
                 <ListGroup variant="flush">
                   <ListGroup.Item>
                     <Row>
-                      <Col>Price</Col>
+                      <Col>Price:</Col>
                       <Col>
-                        <strong>£{product.price}</strong>
+                        <strong>${product.price}</strong>
                       </Col>
                     </Row>
                   </ListGroup.Item>
+
                   <ListGroup.Item>
                     <Row>
                       <Col>Status:</Col>
@@ -111,6 +116,7 @@ const ProductScreen = ({ history, match }) => {
                       </Col>
                     </Row>
                   </ListGroup.Item>
+
                   {product.countInStock > 0 && (
                     <ListGroup.Item>
                       <Row>
@@ -123,7 +129,7 @@ const ProductScreen = ({ history, match }) => {
                           >
                             {[...Array(product.countInStock).keys()].map(
                               (x) => (
-                                <option value={x + 1} key={x + 1}>
+                                <option key={x + 1} value={x + 1}>
                                   {x + 1}
                                 </option>
                               )
@@ -133,6 +139,7 @@ const ProductScreen = ({ history, match }) => {
                       </Row>
                     </ListGroup.Item>
                   )}
+
                   <ListGroup.Item>
                     <Button
                       onClick={addToCartHandler}
@@ -162,7 +169,15 @@ const ProductScreen = ({ history, match }) => {
                 ))}
                 <ListGroup.Item>
                   <h2>Write a Customer Review</h2>
-                {errorProductReview && <Message variant="danger">{errorProductReview}</Message>}
+                  {successProductReview && (
+                    <Message variant="success">
+                      Review submitted successfully
+                    </Message>
+                  )}
+                  {loadingProductReview && <Loader />}
+                  {errorProductReview && (
+                    <Message variant="danger">{errorProductReview}</Message>
+                  )}
                   {userInfo ? (
                     <Form onSubmit={submitHandler}>
                       <Form.Group controlId="rating">
@@ -186,10 +201,16 @@ const ProductScreen = ({ history, match }) => {
                           as="textarea"
                           row="3"
                           value={comment}
-                          onChange={(e) => e.target.value}
+                          onChange={(e) => setComment(e.target.value)}
                         ></Form.Control>
                       </Form.Group>
-                      <Button type="submit" variant="primary">Submit</Button>
+                      <Button
+                        disabled={loadingProductReview}
+                        type="submit"
+                        variant="primary"
+                      >
+                        Submit
+                      </Button>
                     </Form>
                   ) : (
                     <Message>
