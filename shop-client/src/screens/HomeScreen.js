@@ -5,6 +5,7 @@ import Product from "../components/Product";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
 import Paginate from "../components/Paginate";
+import ProductCarousel from "../components/ProductCarousel";
 import { listProducts } from "../actions/productActions";
 
 const HomeScreen = ({ match }) => {
@@ -23,6 +24,11 @@ const HomeScreen = ({ match }) => {
 
   return (
     <>
+      {!keyword && (
+        <>
+          <h1>Top Reviewed</h1> <ProductCarousel />
+        </>
+      )}
       <h1>Our Showroom</h1>
       {loading ? (
         <Loader />
@@ -37,7 +43,11 @@ const HomeScreen = ({ match }) => {
               </Col>
             ))}
           </Row>
-          <Paginate pages={pages} page={page} keyword={keyword ? keyword : ""}/>
+          <Paginate
+            pages={pages}
+            page={page}
+            keyword={keyword ? keyword : ""}
+          />
         </>
       )}
     </>
