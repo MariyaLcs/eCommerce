@@ -67,3 +67,7 @@
 15. react-helmet
 
 - This reusable React component will manage all of your changes to the document head.
+
+16. deployment
+
+- server.js => process.env.NODE_ENV === "production" //// .env => NODE_ENV = development => NODE_ENV = production
