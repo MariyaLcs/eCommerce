@@ -71,3 +71,6 @@
 16. deployment
 
 - server.js => process.env.NODE_ENV === "production" //// .env => NODE_ENV = development => NODE_ENV = production
+- heroku login
+- heroku create evening-dress-ecomm
+- Procfile
