@@ -63,3 +63,7 @@
 14. morgan
 
 - HTTP request logger middleware for node.js
+
+15. react-helmet
+
+- This reusable React component will manage all of your changes to the document head.
