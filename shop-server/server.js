@@ -21,7 +21,6 @@ if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
 
-
 app.use(express.json());
 
 app.use("/api/products", productRoutes);
@@ -34,18 +33,14 @@ app.get("/api/config/paypal", (req, res) =>
 );
 
 const __dirname = path.resolve('..')
-// app.use(favicon(path.join(__dirname, "build", "favicon.ico")));
-// app.use(express.static(path.join(__dirname, "build")));
 console.log(__dirname);
 app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
-app.use(favicon(path.resolve(__dirname, "shop-client", "public", "favicon.ico")));
-
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "/shop-client/build")));
 
   app.get("*", (req, res) =>
-    res.sendFile(path.resolve(__dirname, "shop-client", "public", "index.html"))
+    res.sendFile(path.resolve(__dirname, "shop-client", "build", "index.html"))
   );
 } else {
   app.get("/", (req, res) => {
