@@ -4,6 +4,7 @@
   "description": "MERN shopping cart app",
   "main": "server.js",
   "type": "module",
+  "engines":{"node": ">=12.19.0"},
   "scripts": {
     "start": "node shop-server/server",
     "server": "nodemon shop-server/server",
@@ -28,6 +29,5 @@
   },
   "devDependencies": {
     "concurrently": "^5.3.0"
-  },
-  "engines":{"node": ">=12.19.0"}
+  }
 }
