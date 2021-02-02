@@ -36,9 +36,9 @@ app.get("/api/config/paypal", (req, res) =>
 const __dirname = path.resolve('..')
 // app.use(favicon(path.join(__dirname, "build", "favicon.ico")));
 // app.use(express.static(path.join(__dirname, "build")));
-// console.log(__dirname);
+console.log(__dirname);
 app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
-app.use("/server-client", express.static(path.join(__dirname, "build", "favicon.ico")));
+app.use(favicon(path.join(__dirname, "/shop-client/build/favicon.ico")));
 
 
 if (process.env.NODE_ENV === "production") {
