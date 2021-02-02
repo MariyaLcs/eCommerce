@@ -8,12 +8,13 @@
     "node": ">=12.19.0"
   },
   "scripts": {
-    "dev": "react-scripts start",
-    "start": "serve -s build",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "heroku-postbuild": "npm run build"
+    "start": "node shop-server/server",
+    "server": "nodemon shop-server/server",
+    "client": "npm start --prefix shop-client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "data:import": "node shop-server/seeder",
+    "data:destroy": "node shop-server/seeder -d",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix shop-client && npm run build --prefix shop-client"
   },
   "author": "Masha",
   "license": "MIT",
