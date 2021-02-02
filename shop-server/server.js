@@ -33,7 +33,7 @@ app.get("/api/config/paypal", (req, res) =>
 );
 
 const __dirname = path.resolve('..')
-console.log(__dirname);
+// console.log(__dirname);
 app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
 
 if (process.env.NODE_ENV === "production") {
