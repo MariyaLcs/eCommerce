@@ -1,1 +1,1 @@
-web:node shop-server/server.js
+web: node shop-server/server.js
