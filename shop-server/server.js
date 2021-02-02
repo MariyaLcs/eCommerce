@@ -38,14 +38,14 @@ const __dirname = path.resolve('..')
 // app.use(express.static(path.join(__dirname, "build")));
 console.log(__dirname);
 app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
-app.use(favicon(path.join(__dirname, "/shop-client/public/favicon.ico")));
+app.use(favicon(path.resolve(__dirname, "shop-client", "public", "favicon.ico")));
 
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "/shop-client/build")));
 
   app.get("*", (req, res) =>
-    res.sendFile(path.join(__dirname, "/shop-client/build/index.html"))
+    res.sendFile(path.resolve(__dirname, "shop-client", "public", "index.html"))
   );
 } else {
   app.get("/", (req, res) => {
