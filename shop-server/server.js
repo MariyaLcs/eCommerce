@@ -38,7 +38,7 @@ const __dirname = path.resolve('..')
 // app.use(express.static(path.join(__dirname, "build")));
 // console.log(__dirname);
 app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
-app.use("/server-client", express.static(path.join(__dirname, "/favicon.ico")));
+app.use("/server-client", express.static(path.join(__dirname, "build", "favicon.ico")));
 
 
 if (process.env.NODE_ENV === "production") {
