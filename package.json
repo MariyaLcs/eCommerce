@@ -2,13 +2,14 @@
   "name": "proshop",
   "version": "1.0.0",
   "description": "MERN shopping cart app",
-  "main": "server",
+  "main": "server.js",
   "type": "module",
   "engines": {
-    "node": "14.15.0"
+    "node": "14.15."
   },
   "scripts": {
     "start": "node shop-server/server",
+    "server": "node shop-server/server",
     "client": "npm start --prefix shop-client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "data:import": "node shop-server/seeder",
