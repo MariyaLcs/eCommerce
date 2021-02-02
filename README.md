@@ -1,6 +1,6 @@
-![Home page](http://url/to/img.png)
-[Other pages]()
-[Original](https://github.com/bradtraversy/proshop_mern)
+![Home page](https://github.com/MariyaLcs/eCommerce/blob/main/app_pics/main.jpg)
+
+[Other pages](https://github.com/MariyaLcs/eCommerce/tree/main/app_pics)
 
 ### Features
 
@@ -17,3 +17,5 @@
 - Checkout process (shipping, payment method, etc)
 - PayPal / credit card integration
 - Database seeder (products & users)
+
+[Course repo](https://github.com/bradtraversy/proshop_mern)
