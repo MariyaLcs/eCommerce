@@ -4,14 +4,17 @@
   "description": "MERN shopping cart app",
   "main": "server.js",
   "type": "module",
+  "engines": {	
+    "node": "14.15.0"	
+  },
   "scripts": {
     "start": "node shop-server/server",
     "server": "nodemon shop-server/server",
-    "client": "npm start --prefix shop-lient",
+    "client": "npm start --prefix shop-client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "data:import": "node shop-server/seeder",
     "data:destroy": "node shop-server/seeder -d",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix shop-lient && npm run build --prefix shop-lient"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix shop-client && npm run build --prefix shop-client"
   },
   "author": "Masha",
   "license": "MIT",
